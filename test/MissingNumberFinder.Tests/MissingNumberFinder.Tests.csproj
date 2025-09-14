@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\MissingNumberFinder.MissingNumberFinderSum\MissingNumberFinder.MissingNumberFinderSum.csproj" />
     <ProjectReference Include="..\..\src\MissingNumberFinder.Contracts\MissingNumberFinder.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\MissingNumberFinder.MissingNumberFinderXor\MissingNumberFinder.MissingNumberFinderXor.csproj" />
   </ItemGroup>
 
 </Project>
