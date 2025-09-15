@@ -2,6 +2,7 @@
 using MissingNumberFinder.MissingNumberFinderXor;
 using MissingNumberFinder.MissingNumberFinderSum;
 using Microsoft.Extensions.DependencyInjection;
+using MissingNumberFinder.Validators;
 
 class Program
 {
@@ -13,6 +14,12 @@ class Program
 
             if (!TryParseArguments(args, out var numbers, out var algo))
                 return;
+
+            if(!provider.GetService<IMissingNumberValidator>()!.IsValid(new NumberList(numbers.Length + 1, numbers)))
+            {
+                Console.WriteLine("⚠️ Input validation failed.");
+                return;
+            }
 
             var problem = new NumberList(numbers.Length + 1, numbers);
 
@@ -44,6 +51,7 @@ class Program
         var services = new ServiceCollection();
         services.AddSingleton<IAlgorithmDescriptor<int>, XorAlgorithmDescriptor>();
         services.AddSingleton<IAlgorithmDescriptor<int>, SumAlgorithmDescriptor>();
+        services.AddSingleton<IMissingNumberValidator, SingleValidator>();
         return services.BuildServiceProvider();
     }
 
@@ -89,4 +97,5 @@ class Program
                         .Select(s => int.Parse(s.Trim()))
                         .ToArray();
     }
+
 }

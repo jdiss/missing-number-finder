@@ -4,6 +4,7 @@
     <ProjectReference Include="..\MissingNumberFinder.Contracts\MissingNumberFinder.Contracts.csproj" />
     <ProjectReference Include="..\MissingNumberFinder.MissingNumberFinderXor\MissingNumberFinder.MissingNumberFinderXor.csproj" />
     <ProjectReference Include="..\MissingNumberFinder.MissingNumberFinderSum\MissingNumberFinder.MissingNumberFinderSum.csproj" />
+    <ProjectReference Include="..\MissingNumberFinder.Validators\MissingNumberFinder.Validators.csproj" />
   </ItemGroup>
 
   <ItemGroup>
