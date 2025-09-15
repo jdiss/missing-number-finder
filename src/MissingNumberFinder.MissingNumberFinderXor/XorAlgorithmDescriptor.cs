@@ -1,8 +1,8 @@
 namespace MissingNumberFinder.MissingNumberFinderXor;
 using MissingNumberFinder.Contracts;
 
-public class XorAlgorithmDescriptor : IAlgorithmDescriptor
+public class XorAlgorithmDescriptor : IAlgorithmDescriptor<int>
 {
     public string Name => "xor";
-    public IMissingNumberFinder CreateFinder() => new XorFinder();
+    public IMissingNumberFinder<int> CreateFinder() => new XorFinder();
 }

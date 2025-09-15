@@ -42,8 +42,8 @@ class Program
     private static ServiceProvider ConfigureServices()
     {
         var services = new ServiceCollection();
-        services.AddSingleton<IAlgorithmDescriptor, XorAlgorithmDescriptor>();
-        services.AddSingleton<IAlgorithmDescriptor, SumAlgorithmDescriptor>();
+        services.AddSingleton<IAlgorithmDescriptor<int>, XorAlgorithmDescriptor>();
+        services.AddSingleton<IAlgorithmDescriptor<int>, SumAlgorithmDescriptor>();
         return services.BuildServiceProvider();
     }
 
@@ -66,9 +66,9 @@ class Program
         return true;
     }
 
-    private static IAlgorithmDescriptor? ResolveAlgorithm(ServiceProvider provider, string algo)
+    private static IAlgorithmDescriptor<int>? ResolveAlgorithm(ServiceProvider provider, string algo)
     {
-        var algorithms = provider.GetServices<IAlgorithmDescriptor>();
+        var algorithms = provider.GetServices<IAlgorithmDescriptor<int>>();
         var descriptor = algorithms.FirstOrDefault(a =>
             a.Name.Equals(algo, StringComparison.OrdinalIgnoreCase));
 

@@ -1,7 +1,7 @@
 ﻿namespace MissingNumberFinder.MissingNumberFinderSum;
 using MissingNumberFinder.Contracts;
 
-public class SumFinder : IMissingNumberFinder
+public class SumFinder : IMissingNumberFinder<int>
 {
     public int FindMissingNumber(NumberList problem)
     {

@@ -1,7 +1,7 @@
 ﻿namespace MissingNumberFinder.MissingNumberFinderXor;
 using MissingNumberFinder.Contracts;
 
-public class XorFinder : IMissingNumberFinder
+public class XorFinder : IMissingNumberFinder<int>
 {
     public int FindMissingNumber(NumberList problem)
     {
